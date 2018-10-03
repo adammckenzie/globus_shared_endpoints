@@ -1,0 +1,13 @@
+# The client id of the user you want to use to access tasks i.e. computecanada@globusid.org.
+- auth
+    client_id: d2a98c78-a6ed-42ca-92ca-adb558e2c874
+    # Run the script get-refresh-token.py to get the following three values.
+    # WARNING: A refresh token should be as secret, or moreso than a password.
+    # More info at: https://globus-sdk-python.readthedocs.io/en/stable/tutorial/#step-4-use-your-tokens-talk-to-the-service
+    refresh_token: 
+    active_token: 
+    token_expires: 
+
+- endpoints:
+# Dev 6
+    - 40effb02-13f3-11e7-bb56-22000b9a448b
