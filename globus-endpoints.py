@@ -10,6 +10,8 @@ from tabulate import tabulate
 # Also needs tabulate
 # pip install tabulate
 
+# pip install yaml
+
 class Endpoint:
     display_name = "Unset"
     id = "Unset"
@@ -19,7 +21,11 @@ class Endpoint:
     host_endpoint = "Unset"
 
 def get_shared_endpoints_from_endpoint(tc, endpoint_id):
-    return tc.endpoint_manager_hosted_endpoint_list(endpoint_id)
+    details = tc.endpoint_manager_get_endpoint(endpoint_id)
+    if (details["host_endpoint"] == 'null'):
+    	return tc.endpoint_manager_hosted_endpoint_list(endpoint_id)
+    else:
+        return []
 
 def get_endpoints(tc):
     return tc.endpoint_manager_monitored_endpoints()
